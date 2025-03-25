@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقة معايدة عيد الفطر</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            position: relative;
+            display: inline-block;
+        }
+        .card img {
+            width: 100%;
+            max-width: 600px;
+        }
+        .name {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        input, button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>أدخل اسمك للحصول على بطاقة المعايدة الخاصة بك</h2>
+        <input type="text" id="nameInput" placeholder="اكتب اسمك هنا...">
+        <button onclick="generateCard()">عرض المعايدة</button>
+        <div class="card" id="cardContainer" style="display:none;">
+            <img src="بطاقة-معايدة.png" alt="بطاقة معايدة">
+            <div class="name" id="nameText"></div>
+        </div>
+    </div>
+    <script>
+        function generateCard() {
+            let name = document.getElementById("nameInput").value;
+            if (name.trim() !== "") {
+                document.getElementById("nameText").innerText = name;
+                document.getElementById("cardContainer").style.display = "inline-block";
+            }
+        }
+    </script>
+</body>
+</html>
